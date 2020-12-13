@@ -34,11 +34,13 @@ class PalindromeController < ApplicationController
   end
 
   def show_db
-    elems = []
-    PalindromeData.all.each { |x| elems << { num: x.num, count: x.count, nums: x.nums, squared: x.squared } }
-    render xml: elems.to_xml
+    # elems = []
+    # PalindromeData.all.each { |x| elems << {num: x.num, count: x.count, nums: x.nums, squared: x.squared} }
+    # render xml: elems.to_xml
+    respond_to do |format|
+      format.xml { render xml: PalindromeData.all.to_xml }
+    end
   end
-
   private
 
   def palindrome?(num)
