@@ -42,7 +42,7 @@ class PalindromeController < ApplicationController
   private
 
   def palindrome?(num)
-    num == num.to_s.reverse.to_i
+    num.then { |num| num.to_s }.then { |num| num == num.reverse }
   end
 
   def numeric?(obj)
