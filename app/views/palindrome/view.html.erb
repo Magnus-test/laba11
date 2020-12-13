@@ -1,13 +1,13 @@
 <h1>Palindrome#view</h1>
 <p>Finding all squared palindromes from 1 up to entered value.</p>
 
-<% unless @result.is_a?(String) %>
-    <p>Value: <%= @result[:num] %></p>
-    <p>Count: <%= @result[:count] %></p>
-    <p>Nums: <%= @result[:nums] %></p>
-    <p>Squared nums: <%= @result[:sq] %></p>
+<% unless @res.is_a?(String) %>
+    <p>Value: <%= @res.num %></p>
+    <p>Count: <%= @res.count %></p> 
+    <p>Nums: <%= @res.nums %></p>
+    <p>Squared nums: <%= @res.squared %></p>
 <% else %>
-    <p> <%= @result %> </p>
+    <p> <%= @res %> </p>
 <% end %>
 
 <p> <%= link_to "Repeat input", :palindrome_input %> </p>
